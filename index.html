@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .header {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 86px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 17px;
+    }
+
+    .header_title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      color: #95E1D3;
+    }
+
+    .header_nav {
+      width: 100%;
+      max-width: 470px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .header_nav--link {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      color: #95E1D3;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .header_nav--link:hover {
+      color: #F38181;
+    }
+
+    .services {
+      width: 100%;
+      max-width: 1170px;
+      margin: 0 auto;
+    }
+
+    .services_container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 65px;
+      text-align: center;
+    }
+
+
+    .services_container--subtitle {
+      font-family: 'Kaushan Script', cursive;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .services_container--title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 100%;
+      font-variant: small-caps;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .services_container--line {
+      background-color: #F38181;
+      width: 60px;
+      height: 4px;
+    }
+
+
+    .services_content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px 30px;
+    }
+
+    .services_content--box {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .services_content--box img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .services_content--box--info--title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .services_content--box--info--text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      color: #999;
+      line-height: 1.5;
+    }
+
+    .services_container--text {
+      display: flex;
+      color: #999;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .services--img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .services--p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 300px;
+      margin-top: 20px;
+
+    }
+
+    .services--ux {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 300px;
+      margin-top: 10px;
+      color: #999;
+
+    }
+
+
+
+
+    .footer {
+      width: 100%;
+      background-color: #ffffff;
+      padding-bottom: 20px;
+    }
+
+    .footer_container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .footer_divider {
+      border: none;
+      border-top: 1px solid #e5e5e5;
+      margin-bottom: 25px;
+    }
+
+    .footer_content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer_copyright {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #333333;
+    }
+
+    .footer_author {
+      color: #f38181;
+    }
+
+    .footer_author:hover {
+      text-decoration: underline;
+    }
+
+    .subscribe_form {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Поле введення Email */
+    .subscribe_input {
+      width: 230px;
+      height: 40px;
+      padding: 0 15px;
+      border: 1px solid #e7e7e7;
+      border-right: none;
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      color: #cccccc;
+      outline: none;
+    }
+
+    .subscribe_input::placeholder {
+      color: #cccccc;
+    }
+
+
+    .subscribe_button {
+      height: 40px;
+      padding: 0 30px;
+      background-color: #95e1d3;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      cursor: pointer;
+
+    }
+
+    .subscribe_button:hover {
+      background-color: #78cebe;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header_title">MoGo</h1>
+    <nav class="header_nav">
+      <a href="#" class="header_nav--link">ABOUT</a>
+      <a href="#" class="header_nav--link">SERVICE</a>
+      <a href="#" class="header_nav--link">WORK</a>
+      <a href="#" class="header_nav--link">BLOG</a>
+      <a href="#" class="header_nav--link">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="services">
+      <div class="services_container">
+
+        <h3 class="services_container--subtitle">We work with</h3>
+        <h2 class="services_container--title">AMAZING SERVICES</h2>
+        <div class="services_container--line"></div>
+      </div>
+
+      <div class="services_content">
+        <article class="services_content--box">
+          <img src="img/Group (2).png" alt="servicesClock">
+          <div class="services_content--box--info">
+            <h5 class="services_content--box--info--title">photography</h5>
+            <p class="services_content--box--info--text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            </p>
+          </div>
+        </article>
+
+        <article class="services_content--box">
+          <img src="img/Group (3).png" alt="servicesgraph">
+          <div class="services_content--box--info">
+            <h5 class="services_content--box--info--title">web design</h5>
+            <p class="services_content--box--info--text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            </p>
+          </div>
+        </article>
+
+        <article class="services_content--box">
+          <img src="img/display 1.png" alt="servicesDisplay">
+          <div class="services_content--box--info">
+            <h5 class="services_content--box--info--title">creativity</h5>
+            <p class="services_content--box--info--text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            </p>
+          </div>
+        </article>
+
+        <article class="services_content--box">
+          <img src="img/line icons.png" alt="servicesText">
+          <div class="services_content--box--info">
+            <h5 class="services_content--box--info--title">seo</h5>
+            <p class="services_content--box--info--text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            </p>
+          </div>
+        </article>
+
+        <article class="services_content--box">
+          <img src="img/home 1.png" alt="servicesHome">
+          <div class="services_content--box--info">
+            <h5 class="services_content--box--info--title">css/html</h5>
+            <p class="services_content--box--info--text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            </p>
+          </div>
+        </article>
+
+        <article class="services_content--box">
+          <img src="img/digital-marketing 1.png" alt="servicesMicro">
+          <div class="services_content--box--info">
+            <h5 class="services_content--box--info--title">digital</h5>
+            <p class="services_content--box--info--text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="services">
+      <div class="services_container">
+
+        <h3 class="services_container--subtitle">Who we are</h3>
+        <h2 class="services_container--title">Meet our team</h2>
+        <div class="services_container--line"></div>
+      </div>
+      <section class="services--text">
+        <p class="services_container--text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud<br>
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </section>
+      <section class="services--img">
+        <img src="img/first-man 1.png">
+        <img src="img/second-man 1.png">
+        <img src="img/third-man 1.png">
+      </section>
+      <section class="services--p">
+        <p>Matthew Dix</p>
+        <p>Christopher Campbell</p>
+        <p>Michael Fertig </p>
+      </section>
+      <section class="services--ux">
+        <p>Graphic Design</p>
+        <p>Branding/UX design</p>
+        <p>Developerp</p>
+      </section>
+  </main>
+
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="footer_container">
+
+      <hr class="footer_divider">
+
+      <div class="footer_content">
+
+        <div class="footer_copyright">
+          © 2016 MoGo free PSD template by <a href="#" class="footer_author">Laaqiq</a>
+        </div>
+
+
+        <form class="subscribe_form" action="#" method="post">
+          <input type="email" class="subscribe_input">
+          <button type="submit" class="subscribe_button">SUBSCRIBE</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
